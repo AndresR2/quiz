@@ -22,7 +22,7 @@ public class Main {
         Scanner sn2 = new Scanner(System.in);
         boolean salir = false;
         int opcion;
-        String opcion2;
+        String opcion3;
 
         while (!salir) {
 
@@ -42,12 +42,22 @@ public class Main {
                         System.out.println("Has seleccionado Crear incidencia 1");
 
                         System.out.println("Escribe Descripcion de la incidencia");
-                        opcion2 = sn2.next();
+                        opcion3 = sn2.nextLine();
+                        incidencia opcion2 = new incidencia();
+                        opcion2.setEstado("pendiente");
+                        opcion2.codigoNew();
+                        opcion2.setDescripcion(opcion3);
+                        ListaInc.add(opcion2);
 
 
                         break;
                     case 2:
                         System.out.println("Has seleccionado Resolver incidencia 2");
+                        System.out.println("Escribe posicion de la incidencia");
+                        opcion = sn.nextInt();
+                        System.out.println("EL ELEMENTOS ES: " + ListaInc.get(opcion));
+                        ListaInc.get(opcion).resolver();
+                        System.out.println("ESTADO ACTUAL ES: " + ListaInc.get(opcion));
 
                         break;
                     case 3:

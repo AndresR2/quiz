@@ -1,8 +1,13 @@
+import java.util.Random;
+
 public class incidencia {
 
-    public int codigo;
-    public String Descripcion;
-    public String estado;
+    private int codigo;
+    private String Descripcion;
+    private String estado;
+
+    public incidencia() {
+    }
 
     public incidencia(int codigo, String descripcion, String estado) {
         this.codigo = codigo;
@@ -36,8 +41,22 @@ public class incidencia {
         this.estado = estado;
     }
 
+    @Override
+    public String toString() {
+        return "incidencia{" +
+                "codigo=" + codigo +
+                ", Descripcion='" + Descripcion + '\'' +
+                ", estado='" + estado + '\'' +
+                '}';
+    }
+
     public void resolver(){
         setEstado("RESUELTO");
+    }
+
+    public void codigoNew(){
+        Random ale = new Random();
+        setCodigo(ale.nextInt(90));
     }
 
 
